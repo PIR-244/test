@@ -1,6 +1,7 @@
-var lesson_4 = require('./lesson_4');
+var fs = require('fs');
 var http = require('http');
 
 http.createServer(function (req, res) {
-  res.end(lesson_4);
+  fs.createReadStream(__dirname + '/lesson_4.html').pipe(res);
+  
 }).listen(3000);
